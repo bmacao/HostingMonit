@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <title>Admin Alert</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" href="styles/main.css"/>
+        <link rel="stylesheet" href="styles/style.css"/>
+		<link href="http://fonts.googleapis.com/css?family=Raleway:400,300,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		
+		<link rel="stylesheet" type="text/css" href="css/ns-default.css" />
+		<link rel="stylesheet" type="text/css" href="css/ns-style-growl.css" />
+		<script src="js/modernizr.custom.js"></script>
+		
+		
+		<script src="js/classie.js"></script>
+		<script src="js/notificationFx.js"></script>
+		<script>
+		var txt='';
+		
+		function AJ() {
+	var obj;
+	if (window.XMLHttpRequest) obj= new XMLHttpRequest(); 
+	else if (window.ActiveXObject){
+		try{
+			obj= new ActiveXObject('MSXML2.XMLHTTP.3.0');
+		}
+		catch(er){
+			try{
+				obj= new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			catch(er){
+				obj= false;
+			}
+		}
+	}
+	return obj;
+}
+		
+		
+		function isThere(url) {
+	    var req= new AJ(); // XMLHttpRequest object
+	try {
+		req.open("HEAD", url, false);
+		req.send(null);		
+		return req.status== 200 ? true : false;
+	}
+	catch (er) {
+		return false;
+	}
+}
+		
+			function httpGet(theUrl)
+{
+          if (window.XMLHttpRequest)
+          {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+       }
+       xmlhttp.onreadystatechange=function()
+       {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            txt = xmlhttp.responseText;
+        }
+       }
+    xmlhttp.open("GET", theUrl, false );
+    xmlhttp.send();    
+}
+			
+		   
+		   
+		   function noticesalert() {
+		   window.setInterval(function () {
+		   
+		   var testexist = isThere('http://10.12.4.222/admin/data/abuses/abuse.html');
+		   if (testexist == true) {
+		   httpGet('http://10.12.4.222/admin/data/abuses/abuse.html');		
+			
+    					setTimeout( function() {
+
+						
+						// create the notification
+						var notification = new NotificationFx({
+							message : '<p>'+txt+'</p>',
+							layout : 'growl',
+							effect : 'scale',
+							type : 'notice', // notice, warning, error or success
+							onClose : function() {
+								
+							}
+						});
+
+						// show the notification
+						notification.show();
+
+					}, 3000 );
+				};	
+				}, 3000) ;
+			};
+			window.onload = noticesalert;
+				
+
+		</script>
+		
+</script>
+
+    </head>   
+    <body ng-app="admin">
+	<script src="js/classie.js"></script>
+	<script src="js/notificationFx.js"></script>
+	<iframe src="http://free.timeanddate.com/clock/i4ygbxhx/n3664/tlpt5/fn6/fc666/ahl/ftb/pa8/tt0/tw1/tm1/td2/th1/ta1/tb2" frameborder="0" width="277" height="33"></iframe>
+	
+	<div ng-controller="MainCtrl">
+    <p> Updated on: {{date | date:'yyyy-MM-dd hh:mm:ss'}} </p>
+    </div>
+        <!--[if lt IE 7]>
+                    <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+                <![endif]-->
+
+        <!--[if lt IE 9]>
+            <script src="scripts/vendor/es5-shim.min.js"></script>
+            <script src="scripts/vendor/json3.min.js"></script>
+        <![endif]-->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- ISOTOPECONTAINER -->
+                <div class="row" ng-controller="MainCtrl" >
+                    <ul id="isotopeContainer" isotope-container >
+                        <li ng-repeat="x in names track by $index" isotope-item class="kindling {{x.class}}" >
+                            <!--<div class="symbol">{{x.id}}</div>-->
+                            <div class="weight">{{x.PHP}}</div>
+                            <div class="number1">{{x.IIS}}</div>
+							<div class="number2">{{x.MailI}}</div>
+							<div class="number3">{{x.MailO}}</div>
+                            <div class="number">{{x.serverIP}}</div>
+                        </li>
+                </div>
+            </div>
+        </div>
+
+        <!-- javascript librarie --> 
+
+        <script src="bower_components/angular-isotope/demo/scripts/vendor/jquery-2.1.0.min.js"></script>   
+        <script src="bower_components/angular-isotope/demo/scripts/vendor/angular.min.js"></script>
+        <script src="bower_components/angular-isotope/demo/scripts/vendor/jquery.isotope.min.js"></script>
+        <script src="bower_components/angular-isotope/demo/scripts/angular-isotope.min.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="bower_components/highlight/src/highlight.js"></script>
+        <script src="bower_components/angular-highlightjs/angular-highlightjs.min.js"></script>
+    </body>
+</html>
+ 

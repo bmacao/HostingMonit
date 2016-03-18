@@ -1,0 +1,74 @@
+[
+{
+    "id": "13",
+    "IIS": "iis 166% 92",
+    "PHP": "php 0% 20",
+    "MailI": "Inbound 1",
+    "MailO": "Outbound 85",
+    "serverIP": "cp47.webserver.pt",
+    "class": "orange"
+ },
+{
+    "id": "11",
+    "IIS": "iis 107% 13",
+    "PHP": "php 0% 2",
+    "MailI": "Inbound 6",
+    "MailO": "Outbound 29",
+    "serverIP": "alojamentos15.com",
+    "class": "orange"
+ },
+{
+    "id": "8",
+    "IIS": "iis 38% 38",
+    "PHP": "php 0% 15",
+    "MailI": "Inbound 0",
+    "MailO": "Outbound 259",
+    "serverIP": "web35.mydnspt.net",
+    "class": "green"
+ },
+{
+    "id": "15",
+    "IIS": "iis 9% 100",
+    "PHP": "php 33% 44",
+    "MailI": "Inbound 20",
+    "MailO": "Outbound 72",
+    "serverIP": "cp10.webserver.pt",
+    "class": "green"
+ },
+{
+    "id": "14",
+    "IIS": "iis 103% 57",
+    "PHP": "php 0% 16",
+    "MailI": "Inbound 19",
+    "MailO": "Outbound 253",
+    "serverIP": "cp17.webserver.pt",
+    "class": "orange"
+ },
+{
+    "id": "8",
+    "IIS": "iis 5% 38",
+    "PHP": "php 0% 9",
+    "MailI": "Inbound 0",
+    "MailO": "Outbound 11",
+    "serverIP": "cp53.webserver.pt",
+    "class": "green"
+ },
+{
+    "id": "12",
+    "IIS": "iis 166% 46",
+    "PHP": "php 35% 23",
+    "MailI": "Inbound 3",
+    "MailO": "Outbound 38",
+    "serverIP": "cp61.webserver.pt",
+    "class": "orange"
+ },
+{
+    "id": "8",
+    "IIS": "iis 0% 10",
+    "PHP": "php 0% 2",
+    "MailI": "Inbound 1",
+    "MailO": "Outbound 27",
+    "serverIP": "cp64.webserver.pt",
+    "class": "green"
+ }
+]
