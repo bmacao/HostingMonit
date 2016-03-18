@@ -2,7 +2,7 @@
 #One host per folder, in the current coding servers are coded at SRVx folder ( must be created before this step )
 
 #mhost must be IP ( prefered ) or name to be resolved
-$mhost = "94.46.178.8"
+$mhost = "127.0.0.1"
 
 #mhost output file containing the IP address and server name as file name
 #path can be updated, if changed monit scripts must be changed as well
